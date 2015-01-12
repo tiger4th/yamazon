@@ -17,7 +17,7 @@ $responseC = curl_exec($ch);
 $resC = json_decode($responseC, true);
 
 if(!isset($resC["ResultSet"])){
-	echo '<link rel="stylesheet" type="text/css" href="./style.css" />ただいまご利用いただけません。しばらくお待ちください。<br /><a href="http://minrev.main.jp/">トップページに戻る</a>';
+	echo '<link rel="stylesheet" type="text/css" href="./style.css" />ただいまご利用いただけません。しばらくお待ちください。<br /><a href="http://tiger4th.com/yamazon/">トップページに戻る</a>';
 	exit;
 }
 
@@ -87,7 +87,7 @@ if(isset($_GET['start']) && ctype_digit($_GET['start'])){
 
 
 //商品情報取得
-$url = "http://shopping.yahooapis.jp/ShoppingWebService/V1/json/itemSearch?appid=".$app_id."&affiliate_type=yid&affiliate_id=FD.RWZqlDqeHYKdLMFcQUA--&hits=".$results."&category_id=".$id."&sort=".$sort."&offset=".($start-1)."&query=".rawurlencode($query);
+$url = "http://shopping.yahooapis.jp/ShoppingWebService/V1/json/itemSearch?appid=".$app_id."&affiliate_type=vc&affiliate_id=http%3A%2F%2Fck.jp.ap.valuecommerce.com%2Fservlet%2Freferral%3Fsid%3D3146778%26pid%3D883209894%26vc_url%3D&hits=".$results."&category_id=".$id."&sort=".$sort."&offset=".($start-1)."&query=".rawurlencode($query);
 
 curl_setopt($ch, CURLOPT_URL, $url);
 $response = curl_exec($ch);

@@ -191,7 +191,27 @@ echo number_format($off);
 <div class="note">
 <span class="bold orange">おすすめ商品</span>
 <div class="info">
-<script type="text/javascript" src="http://i.yimg.jp/images/shp_front/js/adparts/YahooShoppingAdParts.js"></script><script type="text/javascript">YahooShoppingAdParts({api:"contentMatchItem",query:{url:window.location.href,ad_type:"728_120_itemlinelist",yahoo_color_border:"ffffff",yahoo_color_link:"003399",yahoo_color_bg:"ffffff",yahoo_color_price:"990000",affiliate_type:"yid",affiliate_id:"FD.RWZqlDqeHYKdLMFcQUA--",appid:"PV4HEDKxg675dy7DXmu9TR8RSxSq75NeUXTcTid5cWXGa5epw19jO1q4exBWeqQsif97"},iframe:{width:728,height:120}})</script>
+<script type="text/javascript" src="http://i.yimg.jp/images/shp_front/js/adparts/YahooShoppingAdParts.js"></script>
+<script type="text/javascript">
+YahooShoppingAdParts({
+ api:"contentMatchItem",
+ query:{
+  url:window.location.href,
+  ad_type:"728_120_itemlinelist",
+  yahoo_color_border:"ffffff",
+  yahoo_color_link:"003399",
+  yahoo_color_bg:"ffffff",
+  yahoo_color_price:"990000",
+  affiliate_type:"vc",
+  affiliate_id:"http%3A%2F%2Fck.jp.ap.valuecommerce.com%2Fservlet%2Freferral%3Fsid%3D3146778%26pid%3D883209894%26vc_url%3D",
+  appid:"PV4HEDKxg675dy7DXmu9TR8RSxSq75NeUXTcTid5cWXGa5epw19jO1q4exBWeqQsif97"
+ },
+ iframe:{
+  width:728,
+  height:120
+ }
+})
+</script>
 </div>
 </div>
 </div>

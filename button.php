@@ -44,3 +44,5 @@
 </div>
 
 <?php require("./js/addthis.js"); ?>
+
+<img src="http://ad.jp.ap.valuecommerce.com/servlet/gifbanner?sid=3146778&pid=883209894" height="1" width="0" border="0">

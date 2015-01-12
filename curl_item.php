@@ -35,7 +35,7 @@ if(isset($_GET['code'])){
 
 
 //商品情報取得
-$url = "http://shopping.yahooapis.jp/ShoppingWebService/V1/json/itemSearch?appid=_Mv4G1Wxg66wh_I8XLpEu0UyZmE9NnahCauBOTvIDyLrDGdar8DCCmQ3O5EUOYYT&affiliate_type=yid&affiliate_id=FD.RWZqlDqeHYKdLMFcQUA--&hits=".$results."&category_id=".$id."&sort=".$sort."&offset=".($start-1)."&query=".rawurlencode($query);
+$url = "http://shopping.yahooapis.jp/ShoppingWebService/V1/json/itemSearch?appid=".$app_id."&affiliate_type=vc&affiliate_id=http%3A%2F%2Fck.jp.ap.valuecommerce.com%2Fservlet%2Freferral%3Fsid%3D3146778%26pid%3D883209894%26vc_url%3D&hits=".$results."&category_id=".$id."&sort=".$sort."&offset=".($start-1)."&query=".rawurlencode($query);
 
 $ch = curl_init();
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
@@ -70,7 +70,7 @@ if($res["ResultSet"][0]["Result"][$code]["PriceLabel"]["FixedPrice"] > 0){
 
 //レビュー取得
 $sid = $res["ResultSet"][0]["Result"][$code]["Store"]["Id"];
-$urlR = "http://shopping.yahooapis.jp/ShoppingWebService/V1/json/reviewSearch?appid=_Mv4G1Wxg66wh_I8XLpEu0UyZmE9NnahCauBOTvIDyLrDGdar8DCCmQ3O5EUOYYT&affiliate_type=yid&affiliate_id=FD.RWZqlDqeHYKdLMFcQUA--&results=3&store_id=".$sid;
+$urlR = "http://shopping.yahooapis.jp/ShoppingWebService/V1/json/reviewSearch?appid=".$app_id."&affiliate_type=vc&affiliate_id=http%3A%2F%2Fck.jp.ap.valuecommerce.com%2Fservlet%2Freferral%3Fsid%3D3146778%26pid%3D883209894%26vc_url%3D&results=3&store_id=".$sid;
 
 curl_setopt($ch, CURLOPT_URL, $urlR);
 $responseR = curl_exec($ch);
@@ -78,14 +78,14 @@ $resR = json_decode($responseR, true);
 
 
 //カテゴリ取得
-$urlC = "http://shopping.yahooapis.jp/ShoppingWebService/V1/json/categorySearch?appid=_Mv4G1Wxg66wh_I8XLpEu0UyZmE9NnahCauBOTvIDyLrDGdar8DCCmQ3O5EUOYYT&category_id=".$id;
+$urlC = "http://shopping.yahooapis.jp/ShoppingWebService/V1/json/categorySearch?appid=".$app_id."&category_id=".$id;
 
 curl_setopt($ch, CURLOPT_URL, $urlC);
 $responseC = curl_exec($ch);
 $resC = json_decode($responseC, true);
 
 if(!isset($resC["ResultSet"])){
-	echo '<link rel="stylesheet" type="text/css" href="./style.css" />ただいまご利用いただけません。しばらくお待ちください。<br /><a href="http://minrev.main.jp/">トップページに戻る</a>';
+	echo '<link rel="stylesheet" type="text/css" href="./style.css" />ただいまご利用いただけません。しばらくお待ちください。<br /><a href="http://tiger4th.com/yamazon/">トップページに戻る</a>';
 	exit;
 }
 

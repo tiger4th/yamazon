@@ -148,8 +148,8 @@ YahooShoppingAdParts({
   sort:"-score",
   discount:"",
   shipping:"",
-  affiliate_type:"yid",
-  affiliate_id:"FD.RWZqlDqeHYKdLMFcQUA--",
+  affiliate_type:"vc",
+  affiliate_id:"http%3A%2F%2Fck.jp.ap.valuecommerce.com%2Fservlet%2Freferral%3Fsid%3D3146778%26pid%3D883209894%26vc_url%3D",
   appid:"PV4HEDKxg675dy7DXmu9TR8RSxSq75NeUXTcTid5cWXGa5epw19jO1q4exBWeqQsif97"
  },
  iframe:{
