@@ -57,7 +57,6 @@ if($res["ResultSet"]["totalResultsReturned"] <= 0 || $code == ""){
 	exit;
 }
 
-
 $price = $res["ResultSet"][0]["Result"][$code]["Price"]["_value"];
 if($res["ResultSet"][0]["Result"][$code]["PriceLabel"]["FixedPrice"] > 0){
 	$dprice = $res["ResultSet"][0]["Result"][$code]["PriceLabel"]["FixedPrice"];
@@ -67,6 +66,20 @@ if($res["ResultSet"][0]["Result"][$code]["PriceLabel"]["FixedPrice"] > 0){
 	$dprice = "";
 }
 
+// アフィリエイト不可ストアのリンクからアフィリエイトを外す
+$black_list = array(
+    "dell",
+    "n-garden",
+    "abita-club",
+    "kishindo",
+    "morozoff",
+);
+foreach ($black_list as $black_store) {
+    if (strstr($res["ResultSet"][0]["Result"][$code]["Url"], "%2F".$black_store."%2F")) {
+        $explode = explode("vc_url=", $res["ResultSet"][0]["Result"][$code]["Url"]);
+        $res["ResultSet"][0]["Result"][$code]["Url"] = rawurldecode($explode[1]);
+    }
+}
 
 //レビュー取得
 $sid = $res["ResultSet"][0]["Result"][$code]["Store"]["Id"];
